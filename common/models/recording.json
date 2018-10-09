@@ -1,0 +1,53 @@
+{
+  "name": "recording",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "recording": {
+      "type": "object",
+      "required": true
+    },
+    "translation": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "language": {
+      "type": "belongsTo",
+      "model": "Language",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "prompt": {
+      "type": "belongsTo",
+      "model": "prompt",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "annotations": {
+      "type": "hasMany",
+      "model": "annotation",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
