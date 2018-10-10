@@ -1,7 +1,5 @@
 {
   "db": {
-    "host": "localhost",
-    "port": 27107,
     "url": "mongodb://ec2-18-224-23-241.us-east-2.compute.amazonaws.com/app1",
     "database": "mongodb",
     "password": "",
