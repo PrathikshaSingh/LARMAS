@@ -1,6 +1,6 @@
 {
   "restApiRoot": "/api",
-  "host": "139.59.172.119",
+  "host": "139.59.180.162",
   "port": 8080,
   "remoting": {
     "context": false,
