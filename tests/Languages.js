@@ -30,7 +30,7 @@ describe('Langauges', function() {
   it('should add a SINGLE Languages on /Languages POST', function(done) {
     chai.request(server)
       .post('/Languages')
-      .send({'name': 'Java', 'lastName': 'Script'})
+      .send({'name': 'Java'})
       .end(function(err, res){
         res.should.have.status(200);
         res.should.be.json;
