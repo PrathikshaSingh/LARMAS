@@ -1,6 +1,7 @@
+////Packages required
 const Joi = require('joi');
 const mongoose = require('mongoose');
-
+//defining schema
 const annotationSchema = new mongoose.annotation({
   phrase: {
     type: String,
@@ -9,7 +10,7 @@ const annotationSchema = new mongoose.annotation({
     maxlength: 50
   }
 });
-
+//Validation Functions
 const annotation = mongoose.model('annotation', annotationSchema);
 
 function validateannotation(annotation) {
@@ -19,7 +20,7 @@ function validateannotation(annotation) {
 
   return Joi.validate(annotation, schema);
 }
-
+//exporting schema out to be used by index.js and routes.js
 exports.annotationSchema = annotationSchema;
 exports.annotation = annotation; 
 exports.validate = validateannotation;
