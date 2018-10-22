@@ -30,7 +30,7 @@ describe('Users', function() {
   it('should add a SINGLE Users on /Users POST', function(done) {
     chai.request(server)
       .post('/Users')
-      .send({'name': 'Java', 'lastName': 'Script'})
+      .send({'username': 'name', 'email': 'Sname@'})
       .end(function(err, res){
         res.should.have.status(200);
         res.should.be.json;
