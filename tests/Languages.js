@@ -1,11 +1,13 @@
+//packages required
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../server/app');
 var should = chai.should();
 
+//invoking HTTP function of Chai Module
 chai.use(chaiHttp);
 
-
+//testing of each scripted endpoint
 describe('Langauges', function() {
   it('should list ALL Languages on /Languages GET', function(done) {
     chai.request(server)
@@ -32,14 +34,9 @@ describe('Langauges', function() {
       .end(function(err, res){
         res.should.have.status(200);
         res.should.be.json;
-        res.body.should.be.a('object');
-        res.body.should.have.property('SUCCESS');
-        res.body.SUCCESS.should.be.a('object');
-        res.body.SUCCESS.should.have.property('name');
-        res.body.SUCCESS.should.have.property('lastName');
+        res.body.should.be.a('string');
         res.body.SUCCESS.should.have.property('_id');
         res.body.SUCCESS.name.should.equal('Java');
-        res.body.SUCCESS.lastName.should.equal('Script');
         done();
       });
   });
