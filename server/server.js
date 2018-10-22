@@ -1,10 +1,16 @@
-'use strict';
+//Language Resources Management Server-side Application
+//Created by Prathiksha Singh
+//Final Update Date: 22/10/2018
 
+'use strict';
+//calling all required libraries/packages
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 
+//export all models, under common file, to the REST API
 var app = module.exports = loopback();
 
+//code to gnerate a Node.js Server as the specified IP address and port number in the config.json file
 app.start = function() {
   // start the web server
   return app.listen(function() {
@@ -18,12 +24,9 @@ app.start = function() {
   });
 };
 
-// Bootstrap the application, configure models, datasources and middleware.
-// Sub-apps like REST API are mounted via boot scripts.
+// Bootstrap - to mount APIs and sub-apps
 boot(app, __dirname, function(err) {
   if (err) throw err;
-
-  // start the server if `$ node server.js`
   if (require.main === module)
     app.start();
 });
