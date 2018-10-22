@@ -36,7 +36,7 @@ describe('Users', function() {
         res.should.be.json;
         res.body.should.be.a('string');
         res.body.should.have.property('SUCCESS');
-        res.body.SUCCESS.should.be.a('object');
+        res.body.SUCCESS.should.be.a('string');
         res.body.SUCCESS.should.have.property('username');
         res.body.SUCCESS.should.have.property('email');
         res.body.SUCCESS.should.have.property('_id');
