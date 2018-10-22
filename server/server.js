@@ -1,6 +1,7 @@
 //Language Resources Management Server-side Application
 //Created by Prathiksha Singh
-//Final Update Date: 22/10/2018
+//prepared as part of final report for EEE4022S
+//code was scrited after have enrolled into and completed the "building APIs with LoopbackJS" course adinistered by Raymond Cmaden, The course acn be found at https://www.lynda.com/Node-js-tutorials/Building-APIs-LoopBack/630621-2.html 
 
 'use strict';
 //calling all required libraries/packages
