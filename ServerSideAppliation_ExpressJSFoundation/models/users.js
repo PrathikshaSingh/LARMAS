@@ -1,7 +1,8 @@
+//Packages Required
 const Joi = require('joi');
 const mongoose = require('mongoose');
 
-
+//defining schema
 const users = mongoose.model('users', new mongoose.Schema({
   username: {
     type: String,
@@ -36,7 +37,7 @@ const users = mongoose.model('users', new mongoose.Schema({
     maxlength: 255
   }
 }));
-
+//validating data
 function validateuser(user) {
   const schema = {
     username: Joi.string().min(5).max(50).required(),
@@ -47,6 +48,6 @@ function validateuser(user) {
 
   return Joi.validate(user, schema);
 }
-
+//exporting users to be used by index.js and routers
 exports.user = user; 
 exports.validate = validateuser;
