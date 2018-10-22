@@ -1,6 +1,7 @@
+//packages needed
 const Joi = require('joi');
 const mongoose = require('mongoose');
-
+//defining schema
 const recordingSchema = new mongoose.recording({
   recording: {
     type: Objectid,
@@ -9,7 +10,7 @@ const recordingSchema = new mongoose.recording({
     maxlength: 50
   }
 });
-
+//validating data taken in
 const recording = mongoose.model('recording', recordingSchema);
 
 function validaterecording(recording) {
@@ -19,7 +20,7 @@ function validaterecording(recording) {
 
   return Joi.validate(recording, schema);
 }
-
+//exporting model to be used by index.js and routers.js
 exports.recordingSchema = recordingSchema;
 exports.recording= recording; 
 exports.validate = validaterecording;
